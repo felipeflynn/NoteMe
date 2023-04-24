@@ -4,9 +4,9 @@ import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.biotech.noteme.data.notes.NoteDao
-import com.biotech.noteme.data.notes.NoteDatabase
-import com.biotech.noteme.data.notes.NoteEntity
+import com.biotech.noteme.data.notes.model.local.NoteDao
+import com.biotech.noteme.data.notes.model.local.NoteDatabase
+import com.biotech.noteme.data.notes.model.NoteEntity
 import junit.framework.TestCase.assertEquals
 import org.junit.After
 import org.junit.Before
