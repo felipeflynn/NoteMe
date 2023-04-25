@@ -1,7 +1,7 @@
 package com.biotech.noteme.data.notes
 
-import com.biotech.noteme.data.notes.model.local.NoteDao
 import com.biotech.noteme.data.notes.model.NoteEntity
+import com.biotech.noteme.data.notes.model.local.NoteDao
 import javax.inject.Inject
 
 class NoteRepository @Inject constructor(
