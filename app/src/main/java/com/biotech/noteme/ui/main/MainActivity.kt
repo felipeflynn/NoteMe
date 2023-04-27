@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
                         )
                     }
                     composable(MainDestinations.AddScreen.route) {
-                        AddNoteScreen()
+                        AddNoteScreen(navHostController = navController)
                     }
                 }
             }

@@ -18,7 +18,7 @@ import com.biotech.noteme.ui.main.MainDestinations
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
-    onNavigate: (MainDestinations) -> Unit
+    onNavigate: (MainDestinations) -> Unit,
 ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -27,7 +27,7 @@ fun HomeScreen(
             FloatingActionButton(
                 onClick = {
                     onNavigate(MainDestinations.AddScreen)
-                          },
+                },
                 shape = FloatingActionButtonDefaults.shape,
             ) {
                 Icon(
