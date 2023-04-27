@@ -28,11 +28,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.biotech.noteme.ui.theme.NoteMeTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AddNoteScreen() {
+fun AddNoteScreen(navHostController: NavHostController? = null) {
     var title by remember { mutableStateOf("") }
     var body by remember { mutableStateOf("") }
 
@@ -63,7 +64,9 @@ fun AddNoteScreen() {
             Spacer(modifier = Modifier.height(20.dp))
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
                 Button(
-                    onClick = { /*TODO*/ },
+                    onClick = {
+                        navHostController?.popBackStack()
+                    },
                 ) {
                     Icon(
                         Icons.Filled.Done,
@@ -81,7 +84,7 @@ fun AddNoteScreen() {
 @Composable
 fun FakeAddNoteScreen() {
     NoteMeTheme() {
-        AddNoteScreen()
+        AddNoteScreen(null)
     }
 }
 

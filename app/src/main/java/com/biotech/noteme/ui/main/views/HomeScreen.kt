@@ -13,16 +13,21 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.biotech.noteme.ui.main.MainDestinations
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    onNavigate: (MainDestinations) -> Unit,
+) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         containerColor = MaterialTheme.colorScheme.background,
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /* fab click handler */ },
+                onClick = {
+                    onNavigate(MainDestinations.AddScreen)
+                },
                 shape = FloatingActionButtonDefaults.shape,
             ) {
                 Icon(
