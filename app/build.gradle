@@ -56,6 +56,9 @@ android {
 
 dependencies {
 
+    // Jetpack Compose Navigation
+    def nav_version = "2.5.3"
+    implementation "androidx.navigation:navigation-compose:$nav_version"
 
     // Dagger Hilt dependencies
     def dagger_version = "2.44"
