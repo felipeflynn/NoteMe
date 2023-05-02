@@ -13,15 +13,20 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import com.biotech.noteme.domain.notes.model.Note
+import com.biotech.noteme.ui.components.NoteList
 import com.biotech.noteme.ui.main.MainDestinations
+import com.biotech.noteme.ui.main.interaction.NoteState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     onNavigate: (MainDestinations) -> Unit,
+    noteState: NoteState
 ) {
     Scaffold(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize().padding(top = 25.dp),
         containerColor = MaterialTheme.colorScheme.background,
         floatingActionButton = {
             FloatingActionButton(
@@ -37,6 +42,7 @@ fun HomeScreen(
             }
         },
     ) {
+        NoteList(modifier = Modifier.padding(it), notes = noteState.notes, onSelectedNote = {})
         Column(modifier = Modifier.padding(it)) {
         }
     }
